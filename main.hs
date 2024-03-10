@@ -1,7 +1,6 @@
 
 
 
-
 -- Monthly save rate -> dividend per year in percent -> dividend growth rate per year in percent -> amount of months youre saving money
 
 divi::Float->Float->Float->Int->Float
@@ -13,15 +12,23 @@ divi savings_rate divi_percent divi_growth months = fromIntegral (round (ergebni
 
 
 
+data PaymentFrequency = Monthly | Quarterly | SemiAnnually | Annually deriving (Eq)
 
+--                   capital -> monthly savings rate -> interest Rate -> months -> PaymentFrequency 
+calculateInterest :: Double -> Int -> Double -> Int -> Bool -> PaymentFrequency -> Double
+calculateInterest captial _ _ 0 _ _ = captial
 
--- interestGain money savings_rate interest_rate compoundinterest frequency 
+-- w/o compound interest
+calculateInterest capital 0 interestRate months False _ = capital * (1+interestRate/100/12*fromIntegral months)
 
---  no savings rate
-interestGain money 0 interest_rate compound_interest frequency months | frequency == 1 || not compound_interest = money * (1+interest_rate/100/12*months)
-                                                                      | otherwise = money * (1+interest_rate/100/frequency)^months/frequency 
-interestGain money savings_rate interest_rate compount_interest frequency | frequency == 1 =  
+-- w/ compound interest
+calculateInterest capital 0 interestRate months True frequency | frequency == Monthly = previousInterest * (1+interestRate/100/12)
+                                                               | frequency == Quarterly && months % 3 != 0 = previousInterest (months-(months%3)) * (1+interestRate/100/12*(months%3))
+                                                               | frequency == Quarterly && months % 3 == 0 = previousInterest (months-1) * (1+interestRate/100/4)
 
+                                                               | frequency == SemiAnnually = 
+                                                                                        
+                                                                  where previousInterest months = calculateInterest capital 0 interestRate months True frequency
 
 
 
