@@ -9,8 +9,8 @@ Thank you for your interest in the development! Please be aware that the develop
 
 ### If you want to contribute read this before
 - Dont create pull requests to main
-- Push stable programs to testing
-- Push mostly stable programs with minor bugs to dev
+- Push stable changes to testing
+- Push mostly stable changes with minor bugs to dev
 - If you have major bugs, dont push
 - Dont include the readme of another branch in your pull request
 
