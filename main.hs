@@ -2,7 +2,7 @@
 
 
 
--- Monthly save rate -> dividend per year in percent -> dividend growth rate per year in percent -> amount months youre saving money
+-- Monthly save rate -> dividend per year in percent -> dividend growth rate per year in percent -> amount of months youre saving money
 
 divi::Float->Float->Float->Int->Float
 divi _ _ _ 0 = 0.00
