@@ -8,6 +8,7 @@ Thank you for your interest in the development! Please be aware that the develop
 
 
 ### If you want to contribute read this before
+- Feel free to do any (useful) changes you want, including adding scripts in other languages etc.
 - Dont create pull requests to main
 - Push stable changes to testing
 - Push mostly stable changes with minor bugs to dev
