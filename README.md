@@ -2,3 +2,6 @@
 
 - Calculate your dividend growth and much more soon
 - We value your feedback and appreciate any bug reports or suggestions you may have.
+
+
+##### Feel free to contribute in the developement. Only push to dev or testing.
