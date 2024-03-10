@@ -4,4 +4,4 @@
 - We value your feedback and appreciate any bug reports or suggestions you may have.
 
 
-##### Feel free to contribute in the developement. Only push to dev or testing.
+##### Feel free to contribute in the developement. Only create pull requests to dev or testing.
