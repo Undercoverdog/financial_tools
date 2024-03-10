@@ -13,11 +13,9 @@ divi savings_rate divi_percent divi_growth months = fromIntegral (round (ergebni
 
 
 
+
+
+-- Ressources (used by divi)
 takeListToPwr :: [Float] -> Float -> Int -> [Float]
 takeListToPwr [] _ _ = []
 takeListToPwr (x:xs) factor counter = x*factor^counter : takeListToPwr xs factor (counter+1)
-
-
-
-
-
