@@ -13,14 +13,15 @@ divi savings_rate divi_percent divi_growth months = fromIntegral (round (ergebni
 
 
 
-data PaymentFrequency = Monthly | Quarterly | SemiAnnually | Annually 
 
 
-interestGain money savings_rate interest_rate compoundinterest frequency 
-interestGain money 0 interest_rate compound_interest frequency | frequency == Anually || not compount_interest = money * (1+interest_rate/100)
-                                                               | frequency == SemiAnnually = (money + prev_interest) * (1+interest_rate/100/2)
-                                                                    where prev_interest = money * (interest_rate/100/2)
-                                                               | frequency == quartely
+-- interestGain money savings_rate interest_rate compoundinterest frequency 
+
+--  no savings rate
+interestGain money 0 interest_rate compound_interest frequency months | frequency == 1 || not compound_interest = money * (1+interest_rate/100/12*months)
+                                                                      | otherwise = money * (1+interest_rate/100/frequency)^months/frequency 
+interestGain money savings_rate interest_rate compount_interest frequency | frequency == 1 =  
+
 
 
 
